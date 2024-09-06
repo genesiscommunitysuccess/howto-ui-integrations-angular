@@ -1,0 +1,19 @@
+<section style="height: 100%; width: 100%;">
+  <ng-container >
+    <entity-management
+      design-system-prefix="rapid"
+      header-case-type="capitalCase"
+      enable-row-flashing
+      enable-cell-flashing
+      resourceName="ALL_TRADES"
+      [createEvent]="hasUserPermission('') ? 'EVENT_TRADE_INSERT' : undefined"
+      [createFormUiSchema]="createFormSchema"
+      [updateEvent]="hasUserPermission('') ? 'EVENT_TRADE_MODIFY' : undefined"
+      [updateFormUiSchema]="updateFormSchema"
+      entityLabel="Trade"
+      [columns]="columnDefs"
+      modal-position="centre"
+      size-columns-to-fit
+    ></entity-management>
+  </ng-container>
+</section>
