@@ -1,0 +1,33 @@
+<!--
+    Processes defined here will run the application.
+
+  * Full documentation on process definitions may be found here >> https://learn.genesis.global/docs/server/configuring-runtime/processes/
+
+-->
+
+<processes>
+  <process name="ORDER_MGMT_MANAGER">
+    <groupId>ORDER_MGMT</groupId>
+    <start>true</start>
+    <options>-Xmx512m -DRedirectStreamsToLog=true</options>
+    <module>genesis-pal-eventhandler,genesis-pal-requestserver,genesis-pal-dataserver</module>
+    <package>global.genesis.dataserver.pal,global.genesis.eventhandler.pal,global.genesis.requestreply.pal</package>
+    <script>OrderMgmt-eventhandler.kts,OrderMgmt-reqrep.kts,OrderMgmt-dataserver.kts</script>
+    <description>Management of eventhandler, request server and data server processes</description>
+    <classpath>OrderMgmt-app*</classpath>
+    <language>pal</language>
+  </process>
+  <process name="ORDER_MGMT_CONSOLIDATOR">
+    <groupId>ORDER_MGMT</groupId>
+    <start>true</start>
+    <options>-Xmx256m -DRedirectStreamsToLog=true</options>
+    <module>genesis-pal-consolidator</module>
+    <package>global.genesis.pal.consolidator</package>
+    <script>OrderMgmt-consolidator.kts</script>
+    <description>Consolidation</description>
+    <language>pal</language>
+  </process>
+
+<!-- TODO Runtime 2. Add any new process definitions here-->
+
+</processes>
