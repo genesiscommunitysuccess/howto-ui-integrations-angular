@@ -1,0 +1,21 @@
+<section style="height: 100%; width: 100%;">
+  <ng-container >
+    <entity-management
+      design-system-prefix="rapid"
+      header-case-type="capitalCase"
+      enable-row-flashing
+      enable-cell-flashing
+      resourceName="ALL_COUNTERPARTIES"
+      [createEvent]="hasUserPermission('') ? 'EVENT_COUNTERPARTY_INSERT' : undefined"
+      [createFormUiSchema]="createFormSchema"
+      [updateEvent]="hasUserPermission('') ? 'EVENT_COUNTERPARTY_MODIFY' : undefined"
+      [updateFormUiSchema]="updateFormSchema"
+      [deleteEvent]="hasUserPermission('') ? 'EVENT_COUNTERPARTY_DELETE' : undefined"
+      entityLabel="Counterparty"
+      [columns]="columnDefs"
+      modal-position="centre"
+      size-columns-to-fit
+      enable-search-bar
+    ></entity-management>
+  </ng-container>
+</section>

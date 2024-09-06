@@ -1,0 +1,21 @@
+<section style="height: 100%; width: 100%;">
+  <ng-container >
+    <entity-management
+      design-system-prefix="rapid"
+      header-case-type="capitalCase"
+      enable-row-flashing
+      enable-cell-flashing
+      resourceName="ALL_INSTRUMENTS"
+      [createEvent]="hasUserPermission('') ? 'EVENT_INSTRUMENT_INSERT' : undefined"
+      [createFormUiSchema]="createFormSchema"
+      [updateEvent]="hasUserPermission('') ? 'EVENT_INSTRUMENT_MODIFY' : undefined"
+      [updateFormUiSchema]="updateFormSchema"
+      [deleteEvent]="hasUserPermission('') ? 'EVENT_INSTRUMENT_DELETE' : undefined"
+      entityLabel="Instrument"
+      [columns]="columnDefs"
+      modal-position="centre"
+      size-columns-to-fit
+      enable-search-bar
+    ></entity-management>
+  </ng-container>
+</section>

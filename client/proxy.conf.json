@@ -1,0 +1,9 @@
+{
+  "/gwf": {
+    "target": "http://localhost:9064",
+    "secure": false,
+    "changeOrigin": true,
+    "ws": true,
+    "pathRewrite": { "^/gwf": "" }
+  }
+}
